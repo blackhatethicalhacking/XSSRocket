@@ -1,4 +1,4 @@
-# BHEH_FAST_XSS_GPT.sh
+# BHEH FAST XSS GPT
 
 <p align="center">
 <a href="https://www.blackhatethicalhacking.com"><img src="https://pbs.twimg.com/profile_banners/770898848197795840/1650879597/1500x500" width="600px" alt="BHEH"></a>
