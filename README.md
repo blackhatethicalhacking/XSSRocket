@@ -13,11 +13,11 @@ The tool is written by Black Hat Ethical Hacking with the help of #ChatGPT as an
 
 # Description
 
-The tool uses the Wayback Machine to fetch URLs and filters them based on parameters contained in the URLs. It then filters the URLs with httpx while using multiple grep and SED patterns to filter only the ones that are alive and valid, removing the contents of the parameters and then uses a remote XSS payload list from Github to send GET requests with the payloads to the filtered URLs injecting them with the XSS Payloads, showcasing the status for 200 and 4XX errors in Red and Green, and creating a Summary for the findings, while saving all the results into a folder that has the same name as the domain name created with all the results, inside it.
+The tool uses the **Wayback Machine** to fetch URLs and filters them based on parameters contained in the URLs. It then filters the URLs with **httpx** while using multiple **Grep** and **SED** patterns to filter only the ones that are alive and valid, removing the contents of the parameters and then uses a **remote XSS payload list from Github** to send **GET requests** with the payloads to the filtered URLs **injecting them with the XSS Payloads**, showcasing the status for **200 and 4XX errors** in Red and Green, and creating a **Summary for the findings**, while **saving all the results** into a folder that has the same name as the domain name created with all the results, inside it.
 
-It also includes a feature that generates a random Sun Tzu quote for offensive security and uses lolcat to display colorful outputs and ASCII art and a check system to ensure that the user is connected to the internet before running it. 
+It also includes a **feature** that generates a random **Sun Tzu quote for Offensive Security** and uses lolcat to display colorful outputs and ASCII art and a check system to ensure that the user is connected to the internet before running it. 
 
-What is special about this tool is that technically, is the methodology used and critical thinking behind it for each step that it is doing its action, but also by changing the payload wordlist, you could do more injection based attacks. This means you can modify it, so it can check for SQL Injections, OS Command Injection and so on! - If you do change it, send us a push notification so we can add it!
+What is special about this tool is that technically, is the **methodology** used and **critical thinking** behind it for each step that it is doing its action, but also by changing the payload wordlist, you could do more injection based attacks. This means you can modify it, so it can check for SQL Injections, OS Command Injection and so on! - **If you do change it, send us a push notification so we can add it!**
 
 # Features:
 
