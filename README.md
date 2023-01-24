@@ -33,6 +33,8 @@ What is special about this tool is that technically, is the **methodology** used
 
 • Detects and reports possible XSS vulnerabilities
 
+• Shows status for the attack based on an algorithm, and estimate of completion every 1 minute
+
 • Creates a folder with the domain name to save results
 
 • Prints final message with number of possible vulnerable URLs and a Summary
