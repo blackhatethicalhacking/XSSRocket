@@ -17,7 +17,7 @@ The tool uses the Wayback Machine to fetch URLs and filters them based on parame
 
 It also includes a feature that generates a random Sun Tzu quote for offensive security and uses lolcat to display colorful outputs and ASCII art. It also includes a check to ensure that the user is connected to the internet before running it. 
 
-What is special about this tool is that technically, by changing the payload wordlist, you could do more injection based attacks. This means you can modify it, so it can check for SQL Injections, OS Command Injection and so on! - If you do change it, send us a push notification so we can add it!
+What is special about this tool is that technically, is the methodology used and critical thinking behind it for each step that it is doing its action, but also by changing the payload wordlist, you could do more injection based attacks. This means you can modify it, so it can check for SQL Injections, OS Command Injection and so on! - If you do change it, send us a push notification so we can add it!
 
 # Features:
 
