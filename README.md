@@ -69,15 +69,12 @@ What is special about this tool is that technically, is the methodology used and
 
 `./BHEH_FAST_XSS_GPT.sh`
 
-# Screenshots
+# Screenshot
 
 **Main Menu**
 
 ![alt text](https://i.ibb.co/60sFfjJ/Main.png)
 
-**Attack in Progress**
-
-![alt text](https://i.ibb.co/0fGDnNZ/Attack.png)
 
 # Compatibility: 
 
