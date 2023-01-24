@@ -86,12 +86,17 @@ echo "$param_urls" >> $clean_domain/parameter_urls.txt
 echo "${affected_urls[@]}" >> $clean_domain/affected_urls.txt
 # Move the txt files generated inside the folder
 mv *.txt $clean_domain/
-# Print Summary
-echo "Summary of the Scan:" | lolcat
-echo "A total of $counter possible XSS Injections found."
-echo ""
-echo "Possible Vulnerable URLs:"
-cat $clean_domain/affected_urls.txt | lolcat 
+if [ -s affected_urls.txt ]; then
+    echo "Summary of the Scan:" | lolcat
+    echo "A total of $(cat affected_urls.txt | wc -l) possible XSS Injections are found."
+    echo "Possible Vulnerable URLs:" | lolcat
+    cat affected_urls.txt
+    echo "Found Vulnerability here:" | lolcat
+    echo "Payload: (show the payload inserted)" | lolcat
+else
+    echo "Summary of the Scan:" | lolcat
+    echo "No Vulnerabilities Found" | lolcat
+fi
 sleep 1
 echo "Thank you for using our tool, if you feel it has helped you, you can buy us a coffee here: https://www.buymeacoffee.com/bheh" | lolcat
 sleep 1
