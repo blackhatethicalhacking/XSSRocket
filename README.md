@@ -73,7 +73,7 @@ What is special about this tool is that technically, is the methodology used and
 
 **Main Menu**
 
-![alt text](https://i.ibb.co/6JnTt3B/Main.png)
+![alt text](https://i.ibb.co/60sFfjJ/Main.png)
 
 **Attack in Progress**
 
