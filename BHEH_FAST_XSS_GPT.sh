@@ -74,6 +74,8 @@ while read payload; do
         done
 done < xss-payload-list.txt
 
+
+echo "Creating the Folder and saving all the results..." | lolcat
 # Create a folder with the domain name and save the results
 # Clean the domain input from illegal characters
 clean_domain=`echo $domain | tr -cd '[:alnum:]\n\r'`
@@ -82,28 +84,15 @@ clean_domain=`echo $domain | tr -cd '[:alnum:]\n\r'`
 mkdir $clean_domain
 echo "$param_urls" >> $clean_domain/parameter_urls.txt
 echo "${affected_urls[@]}" >> $clean_domain/affected_urls.txt
-
 # Move the txt files generated inside the folder
-mv $clean_domain/*.txt $clean_domain/
-
-# Move the folder to a results folder
-mkdir -p results
-mv $clean_domain results/
-
+mv *.txt $clean_domain/
 # Print Summary
 echo "Summary of the Scan:" | lolcat
 echo "A total of $counter possible XSS Injections found."
 echo ""
 echo "Possible Vulnerable URLs:"
-while read affected_url; do
-echo "Found Vulnerability here: $affected_url"
-echo "Payload: $payload"
-echo ""
-done < affected_urls.txt
+cat $clean_domain/affected_urls.txt | lolcat 
 sleep 1
-echo "Creating the Folder and saving all the results..." | lolcat
-# Save the result URLs in a file
-cat affected_urls.txt >> results/$clean_domain/urls_with_possible_xss.txt
 echo "Thank you for using our tool, if you feel it has helped you, you can buy us a coffee here: https://www.buymeacoffee.com/bheh" | lolcat
 sleep 1
 echo "Copyrights 2023 - All rights reserved - chris@bheh.net"
