@@ -45,7 +45,7 @@ What is special about this tool is that technically, is the methodology used and
 
 • Output the full URL with payload
 
-This tool with also display a summary feature that displays the total number of possible XSS injections found, along with a list of affected URLs, the payload used, and the response code, at the end.
+**This tool with also display a summary feature that displays the total number of possible XSS injections found, along with a list of affected URLs, the payload used, and the response code, at the end.**
 
 # Requirements:
 
