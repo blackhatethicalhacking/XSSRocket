@@ -17,9 +17,11 @@ The tool uses the **Wayback Machine** to fetch URLs and filters them based on pa
 
 It also includes a **feature** that generates a random **Sun Tzu quote for Offensive Security** and uses lolcat to display colorful outputs and ASCII art and a check system to ensure that the user is connected to the internet before running it. 
 
-What is special about this tool is that technically, is the **methodology** used and **critical thinking** behind it for each step that it is doing its action, but also by changing the payload wordlist, you could do more injection based attacks. This means you can modify it, so it can check for SQL Injections, OS Command Injection and so on! - **If you do change it, send us a push notification so we can add it!**
+What is special about this tool is that technically, is the **methodology** used and **critical thinking** behind it for each step that it is doing its action, but also by changing the payload wordlist, you could do more injection based attacks. This means you can modify it, so it can check for SQL Injections, OS Command Injection and so on! - **If you do change it, send us a push notification so we can add it!** You also get to perform stealth scans by changing the IP before each attack to evade various mechanisms. 
 
 # Features:
+
+• Supports Stealth Mode using Proxychains, for more reliable attacks against defensive mechanisms
 
 • Automatically fetches URLs from the Wayback Machine
 
