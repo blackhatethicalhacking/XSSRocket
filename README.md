@@ -79,7 +79,8 @@ What is special about this tool is that technically, is the **methodology** used
 
 **Main Menu**
 
-![alt text](https://i.ibb.co/60sFfjJ/Main.png)
+
+<img width="960" alt="XSSROCKET" src="https://user-images.githubusercontent.com/13942386/214658544-3a90a242-5c34-46d4-bb38-dd52c8364844.png">
 
 
 # Compatibility: 
