@@ -29,6 +29,8 @@ What is special about this tool is that technically, is the **methodology** used
 
 • Uses a remote XSS payload list from Github
 
+• Installs all requirements needed depending on the architecture as it gets new updates (Compatible with MacOS, Ubuntu, Debian, Kali)
+
 • Sends GET requests with payload list to URLs
 
 • Detects and reports possible XSS vulnerabilities
