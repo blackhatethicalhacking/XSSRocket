@@ -1,4 +1,4 @@
-# BHEH'S XSS ROCKET
+# BHEH's XSSRocket
 
 <p align="center">
 <a href="https://www.blackhatethicalhacking.com"><img src="https://pbs.twimg.com/profile_banners/770898848197795840/1650879597/1500x500" width="600px" alt="BHEH"></a>
@@ -13,7 +13,7 @@ XSS ROCKET is written by Black Hat Ethical Hacking with the help of #ChatGPT as 
 
 # Description
 
-XSS ROCKET, uses the **Wayback Machine** to fetch URLs and filters them based on parameters contained in the URLs. It then filters the URLs with **httpx** while using multiple **Grep** and **SED** patterns to filter only the ones that are alive and valid, removing the contents of the parameters and then uses a **remote XSS payload list from Github** to send **GET requests** with the payloads to the filtered URLs **injecting them with the XSS Payloads**, showcasing the status for **200 and 4XX errors** in Red and Green, and creating a **Summary for the findings**, while **saving all the results** into a folder that has the same name as the domain name created with all the results, inside it.
+XSS Rocket, uses the **Wayback Machine** to fetch URLs and filters them based on parameters contained in the URLs. It then filters the URLs with **httpx** while using multiple **Grep** and **SED** patterns to filter only the ones that are alive and valid, removing the contents of the parameters and then uses a **remote XSS payload list from Github** to send **GET requests** with the payloads to the filtered URLs **injecting them with the XSS Payloads**, showcasing the status for **200 and 4XX errors** in Red and Green, and creating a **Summary for the findings**, while **saving all the results** into a folder that has the same name as the domain name created with all the results, inside it.
 
 It also includes a **feature** that generates a random **Sun Tzu quote for Offensive Security** and uses lolcat to display colorful outputs and ASCII art and a check system to ensure that the user is connected to the internet before running it. 
 
@@ -67,13 +67,13 @@ What is special about this tool is that technically, is the **methodology** used
 
 # Installation
 
-`git clone https://github.com/blackhatethicalhacking/XSSROCKET.git`
+`git clone https://github.com/blackhatethicalhacking/XSSRocket.git`
 
-`cd XSSROCKET`
+`cd XSSRocket`
 
-`chmod +x XSSROCKET.sh`
+`chmod +x XSSRocket.sh`
 
-`./XSSROCKET.sh`
+`./XSSRocket.sh`
 
 # Screenshot
 
