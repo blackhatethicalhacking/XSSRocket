@@ -16,14 +16,14 @@ figlet "HACK THE PLANET!" | lolcat
 sleep 1
 echo "MEANS, IT'S ☕ 1337 ⚡ TIME, 369 ☯ " | lolcat
 sleep 1
-echo "[YOUR ARE USING XSSROCKET.sh] - (v1.0) CODED BY Chris 'SaintDruG' Abou-Chabké WITH ❤ FOR blackhatethicalhacking.com for Educational Purposes only!" | lolcat
+echo "[YOUR ARE USING XSSRocket.sh] - (v1.0) CODED BY Chris 'SaintDruG' Abou-Chabké WITH ❤ FOR blackhatethicalhacking.com for Educational Purposes only!" | lolcat
 sleep 1
 #check if the user is connected to the internet
 tput bold;echo "CHECKING IF YOU ARE CONNECTED TO THE INTERNET!" | lolcat
 # Check connection
 wget -q --spider https://google.com
 if [ $? -ne 0 ];then
-    echo "++++ CONNECT TO THE INTERNET BEFORE RUNNING BHEH_FAST_XSS_GPT.sh!" | lolcat
+    echo "++++ CONNECT TO THE INTERNET BEFORE RUNNING XSSRocket.sh!" | lolcat
     exit 1
 fi
 tput bold;echo "++++ CONNECTION FOUND, LET'S GO!" | lolcat
@@ -66,7 +66,7 @@ fi
 
 # Use a remote XSS payload list from github
 payload_file="xss-payload-list.txt"
-payload_url="https://raw.githubusercontent.com/blackhatethicalhacking/XSSROCKET/main/top-500-xss-payloads.txt"
+payload_url="https://raw.githubusercontent.com/blackhatethicalhacking/XSSRocket/main/top-500-xss-payloads.txt"
 if test ! -f "$payload_file"; then
     echo "Downloading Default Payload list from: $payload_url" | lolcat
     if ! wget $payload_url -O $payload_file; then
