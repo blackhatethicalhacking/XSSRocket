@@ -167,14 +167,7 @@ echo "Thank you for using our tool, if you feel it has helped you, you can buy u
 sleep 1
 echo "Copyrights 2023 - All rights reserved - chris@bheh.net"
 # Matrix effect
-echo "Exiting the Matrix for 5 seconds in:" | toilet --metal -f term -F border
-sleep 1
-echo "3" | toilet --gay -f term -F border
-sleep 1
-echo "2" | toilet --metal -f term -F border
-sleep 1
-echo "1" | toilet --gay -f term -F border
-sleep 1
+echo "Exiting the Matrix for 5 seconds:" | toilet --metal -f term -F border
 
 R='\033[0;31m'
 G='\033[0;32m'
