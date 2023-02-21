@@ -55,6 +55,11 @@ What is special about this tool is that technically, is the **methodology** used
 • Output the full URL with payload
 
 **This tool with also display a summary feature that displays the total number of possible XSS injections found, along with a list of affected URLs, the payload used, and the response code, at the end.**
+    
+It will, help you get the bounty of the bug while hunting:
+    
+![giphy-3](https://user-images.githubusercontent.com/13942386/220473071-db3d1fa8-bec7-47ce-9b46-9a8a8ed123e9.gif)
+
 
 # Requirements:
 
