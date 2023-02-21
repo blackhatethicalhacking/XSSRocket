@@ -9,6 +9,65 @@ quotes=("The supreme art of war is to subdue the enemy without fighting." "All w
 # Get a random quote from the array
 random_quote=${quotes[$RANDOM % ${#quotes[@]}]}
 
+# Check if lolcat, fortune-mod, figlet and curl are installed
+if ! command -v lolcat > /dev/null; then
+  echo "lolcat not found, installing..."
+  if command -v dnf > /dev/null; then
+    sudo dnf install -y lolcat
+  elif command -v yum > /dev/null; then
+    sudo yum install -y lolcat
+  elif command -v apt-get > /dev/null; then
+    sudo apt-get install -y lolcat
+  else
+    echo "Error: package manager not found, please install lolcat manually"
+    exit 1
+  fi
+fi
+
+if ! command -v fortune > /dev/null; then
+  echo "fortune-mod not found, installing..."
+  if command -v dnf > /dev/null; then
+    sudo dnf install -y fortune-mod
+  elif command -v yum > /dev/null; then
+    sudo yum install -y fortune-mod
+  elif command -v apt-get > /dev/null; then
+    sudo apt-get install -y fortune-mod
+  else
+    echo "Error: package manager not found, please install fortune-mod manually"
+    exit 1
+  fi
+fi
+
+if ! command -v figlet > /dev/null; then
+  echo "figlet not found, installing..."
+  if command -v dnf > /dev/null; then
+    sudo dnf install -y figlet
+  elif command -v yum > /dev/null; then
+    sudo yum install -y figlet
+  elif command -v apt-get > /dev/null; then
+    sudo apt-get install -y figlet
+  else
+    echo "Error: package manager not found, please install figlet manually"
+    exit 1
+  fi
+fi
+
+if ! command -v curl > /dev/null; then
+  echo "curl not found, installing..."
+  if command -v dnf > /dev/null; then
+    sudo dnf install -y curl
+  elif command -v yum > /dev/null; then
+    sudo yum install -y curl
+  elif command -v apt-get > /dev/null; then
+    sudo apt-get install -y curl
+  else
+    echo "Error: package manager not found, please install curl manually"
+    exit 1
+  fi
+fi
+
+echo "All dependencies installed successfully"
+
 # Print the quote
 echo "Offensive security tip: $random_quote - Sun Tzu" | lolcat
 sleep 1
