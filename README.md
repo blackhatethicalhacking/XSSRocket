@@ -27,7 +27,7 @@ What is special about this tool is that technically, is the **methodology** used
 
 • Filters URLs based on parameters contained in the URLs
 
-• Used httpx to filter only alive URLs and clearing the values for each parameter
+• Uses httpx to filter only alive URLs and clearing the values for each parameter
 
 • Uses a remote XSS payload list from Github
 
