@@ -22,6 +22,7 @@ What is special about this tool is that technically, is the **methodology** used
 # Latest Version & Updates:
 
 • V2 now supports sending the result by email to any email, you can use your own SMTP credentials in order to setup the configuration by editing the script and adding your details.
+
 • Some tweaks and enhancement in performance
 
 # Features:
