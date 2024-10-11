@@ -98,45 +98,6 @@ This tool has been tested on Kali Linux, Ubuntu and MacOS.
 
 To change the list of payloads, you can edit the tool and set another URL.
 
-# TO DO:
-
-Ask the user towards the end, to email the results of the summary.
-
-This is something that we will be using:
-
-```
-# Check if there were any affected URLs
-if [ -s affected_urls.txt ]; then
-    echo "A total of $counter possible XSS injections found."
-    echo "Possible vulnerable URLs:"
-    cat affected_urls.txt
-
-    # Ask user if they want to email the results
-    read -p "Do you want to email the results? (y/n): " email_results
-    if [ "$email_results" == "y" ]; then
-        # Set variables for the email
-        recipient="example@email.com"
-        subject="Vulnerability Results from BHEH_FAST_XSS_GPT for $domain"
-        body="A total of $counter possible XSS injections found.\nPossible vulnerable URLs:\n$(cat affected_urls.txt)"
-        summary="$(echo -e "$body")"
-        smtp_url="smtp.mailtrap.io"
-        smtp_port="2525"
-        api_key="YOUR_API_KEY"
-
-        # Send the email with curl
-        curl --request POST \
-             --url "smtp://$smtp_url:$smtp_port" \
-             --data-urlencode "from=BHEH_FAST_XSS_GPT <from@email.com>" \
-             --data-urlencode "to=$recipient" \
-             --data-urlencode "subject=$subject" \
-             --data-urlencode "text=$summary" \
-             --user "$api_key:"
-        echo -e "\nEmail sent!"
-    fi
-else
-    echo "No vulnerabilities found."
-fi
-```
 
 # Disclaimer
 
