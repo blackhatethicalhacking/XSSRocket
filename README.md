@@ -85,7 +85,8 @@ It will, help you get the bounty of the bug while hunting:
 **Main Menu**
 
 
-![Main](https://user-images.githubusercontent.com/13942386/214919576-c306a78f-419d-4110-8759-726ae188754c.png)
+
+![Capture](https://github.com/user-attachments/assets/f4698248-e08c-4dac-95b3-26853154d898)
 
 
 
